@@ -22,5 +22,25 @@ h2 {
     border: 1px solid black;
     font-size: 70px;
     text-align: center;
-    border-radius: 10px;
+    
+}
+
+.field:first-child,
+.field:nth-child(2),
+.field:nth-child(3) {
+    border-top: none;
+}
+
+.field:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.field:nth-child(3n + 3) {
+    border-right: none;   
+}
+
+.field:last-child,
+.field:nth-child(7),
+.field:nth-child(8) {
+    border-bottom: none;
 }

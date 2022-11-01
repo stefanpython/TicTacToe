@@ -88,7 +88,6 @@ function playerTruns() {
                 cell[index].style.pointerEvents = 'none';
             }
             
-            
         })
     })
     
@@ -99,7 +98,9 @@ playerTruns();
 
 function gameWinCheck() {
 
-    let winner = null;
+    const displayWin = document.querySelector('.displayWin');
+    const bDisplay = document.querySelector('.board');
+
     gameBoard.winCombos.forEach((combo, index) => {
         
         let a = gameBoard.board[combo[0]];
@@ -109,9 +110,11 @@ function gameWinCheck() {
         if (a != '' && a == b && b == c) {
             winner = a;
             if (a == 'X') {
-                alert(`${a} - Wins!`);
+               displayWin.textContent = `${a} - Wins!`;
+               bDisplay.style.pointerEvents = 'none';
             } else {
-                alert(`${a} - Wins!`);
+                displayWin.textContent = `${a} - Wins!`;
+                bDisplay.style.pointerEvents = 'none';
             }
             
         }
@@ -129,6 +132,8 @@ gameWinCheck();
 const startButton = (() => {
 
     const startBtn = document.getElementById('start-btn');
+    const restartBtn = document.querySelector('.restart');
+    const displayWin = document.querySelector('.displayWin');
     
     startBtn.addEventListener('click', () => {
     
@@ -136,6 +141,18 @@ const startButton = (() => {
         playerTruns();
         gameWinCheck();
         startBtn.style.display = 'none';
+        restartBtn.style.display = 'block';
+        displayWin.style.display = 'block';
     })
-    
+
+})();
+
+
+const resetbtn = (() => {
+
+    const restartBtn = document.querySelector('.restart');
+    restartBtn.addEventListener('click', () => {
+        window.location.reload();
+    })
+
 })();

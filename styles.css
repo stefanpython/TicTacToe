@@ -43,3 +43,17 @@ h2 {
 .field:nth-child(8) {
     border-bottom: none;
 }
+
+.restart {
+    display: none;
+    text-align: center;
+    margin-top: -100px;
+}
+
+.displayWin {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: -90px;
+    display: none;
+    font-size: 40px;
+}

@@ -14,15 +14,14 @@ h2 {
     width: 350px;
     height: 350px;
     margin: 200px auto;
-    border-radius: 10px;
-    gap: 1px;
 }
 
 .field {
     border: 1px solid black;
     font-size: 70px;
     text-align: center;
-    
+    width: 120px;
+    height: 120px;
 }
 
 .field:first-child,

@@ -108,13 +108,16 @@ function gameWinCheck() {
         let c = gameBoard.board[combo[2]];
 
         if (a != '' && a == b && b == c) {
-            winner = a;
             if (a == 'X') {
-               displayWin.textContent = `${a} - Wins!`;
+               
+               displayWin.textContent = `${a} player - Wins!`;
                bDisplay.style.pointerEvents = 'none';
+
             } else {
-                displayWin.textContent = `${a} - Wins!`;
+
+                displayWin.textContent = `${a} player - Wins!`;
                 bDisplay.style.pointerEvents = 'none';
+
             }
             
         }

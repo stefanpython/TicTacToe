@@ -10,8 +10,9 @@ const gameBoard = (() => {
         return {user, mark, turn} 
     }
 
-    const player1 = aPlayer('player 1', 'X', true);
-    const player2 = aPlayer('Player 2', 'O', false);
+
+    const player1 = aPlayer('user1', 'X', true);
+    const player2 = aPlayer('user2', 'O', false);
 
     let winner = null;
     
@@ -29,9 +30,15 @@ const gameBoard = (() => {
             [0,4,8]
         ];
         
-    return {board, player1, player2, winner, turns, winCombos};
-
-})();
+    return {  
+                board,
+                player1,
+                player2,
+                winner,
+                turns,
+                winCombos,
+            };
+    })();
 
 
 // Module to display gameboard and it`s contents
@@ -48,7 +55,7 @@ const displayController = (() => {
 
 })();
 
-displayController.displayBoard();
+// displayController.displayBoard();
 
 
 function playerTruns() {
@@ -89,16 +96,6 @@ function playerTruns() {
 
 playerTruns();
 
-// const winCombos = [
-//     [0,1,2],
-//     [0,3,6],
-//     [3,4,5],
-//     [6,7,8],
-//     [1,4,7],
-//     [2,4,6],
-//     [2,5,8],
-//     [0,4,8]
-// ];
 
 function gameWinCheck() {
 
@@ -111,15 +108,34 @@ function gameWinCheck() {
 
         if (a != '' && a == b && b == c) {
             winner = a;
-            alert(`winner ${a}`);
+            if (a == 'X') {
+                alert(`${a} - Wins!`);
+            } else {
+                alert(`${a} - Wins!`);
+            }
+            
         }
     })
 
     if (!gameBoard.board.includes('') && winner == null) {
         alert ('it`s a tie');
     }
+
 }
 
 gameWinCheck();
 
 
+const startButton = (() => {
+
+    const startBtn = document.getElementById('start-btn');
+    
+    startBtn.addEventListener('click', () => {
+    
+        displayController.displayBoard();
+        playerTruns();
+        gameWinCheck();
+        startBtn.style.display = 'none';
+    })
+    
+})();

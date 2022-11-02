@@ -55,8 +55,6 @@ const displayController = (() => {
 
 })();
 
-// displayController.displayBoard();
-
 
 function playerTruns() {
 
@@ -65,7 +63,7 @@ function playerTruns() {
     cell.forEach((elem, index) => {
         elem.addEventListener('click', () => {
     
-            if(gameBoard.player1.turn == true && gameBoard.winner == null) {
+            if(gameBoard.player1.turn == true) {
     
                 gameBoard.board[index] = gameBoard.player1.mark;
                 elem.textContent = gameBoard.player1.mark;
@@ -74,7 +72,7 @@ function playerTruns() {
                 gameBoard.player2.turn = true;
                 gameWinCheck();
             
-            } else if (gameBoard.player2.turn == true && gameBoard.winner == null) {
+            } else if (gameBoard.player2.turn == true) {
                 gameBoard.board[index] = gameBoard.player2.mark;
                 elem.textContent = gameBoard.player2.mark
     
@@ -123,8 +121,8 @@ function gameWinCheck() {
         }
     })
 
-    if (!gameBoard.board.includes('') && winner == null) {
-        alert ('it`s a tie');
+    if (!gameBoard.board.includes('')) {
+        displayWin.textContent = 'It`s a tie';
     }
 
 }
@@ -159,3 +157,4 @@ const resetbtn = (() => {
     })
 
 })();
+

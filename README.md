@@ -1,3 +1,3 @@
 # TicTacToe
 
-(Live demo)[https://stefanpython.github.io/TicTacToe-Project/]
+[Live demo](https://stefanpython.github.io/TicTacToe-Project/)
